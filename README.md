@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 Banner Grabber — أداة جلب معلومات الخدمات
+# 🔐 Password Generator — أداة توليد كلمات المرور
 
 **تعمل على نظام Kali Linux و تطبيق Termux**
 
@@ -40,7 +40,7 @@
 
 </div>
 
-أداة لجلب معلومات الخدمات والإصدارات من المنافذ المفتوحة على أي هدف، مكتوبة بلغة Python وتعمل على Termux و Kali Linux. تتصل بالخدمة مباشرة وتعرض الـ Banner الذي يكشف عن نوع الخدمة وإصدارها.
+أداة لتوليد كلمات مرور قوية وآمنة، مكتوبة بلغة Python وتعمل على Termux و Kali Linux. تعتمد على مكتبة `secrets` المدمجة في Python للحصول على عشوائية حقيقية من نظام التشغيل، مع تقييم تلقائي لقوة كل كلمة مرور.
 
 ---
 
@@ -50,11 +50,12 @@
 
 </div>
 
-- 🎯 جلب Banner من 15 خدمة شائعة دفعة واحدة
-- 🔍 فحص منفذ محدد بتفاصيل أكثر
-- ⚡ تعدد الخيوط للسرعة القصوى
-- 🏷️ كشف إصدارات الخوادم (Apache, Nginx, OpenSSH...)
-- 📋 ملخص بالخدمات المكتشفة في النهاية
+- 🎲 عشوائية حقيقية باستخدام مكتبة `secrets`
+- 🔑 توليد كلمة مرور واحدة بمعايير مخصصة بالكامل
+- 📝 توليد عبارة مرور (passphrase) سهلة التذكر
+- 📦 توليد مجموعة كلمات مرور دفعة واحدة
+- 📊 تقييم تلقائي للقوة (ضعيفة / متوسطة / قوية / قوية جداً)
+- 💾 حفظ كلمات المرور في ملف نصي
 - 🌍 واجهة عربية بالكامل
 
 ---
@@ -89,22 +90,22 @@ termux-reload-settings
 
 **الخطوة 4 — تنزيل الأداة**
 ```bash
-curl -o $PREFIX/bin/mud_bg.py https://raw.githubusercontent.com/mmuhacker/mud-bg/main/mud_bg.py
+curl -o $PREFIX/bin/mud_pg.py https://raw.githubusercontent.com/mmuhacker/mud-pg/main/mud_pg.py
 ```
 
 **الخطوة 5 — إعطاء صلاحية التشغيل**
 ```bash
-chmod +x $PREFIX/bin/mud_bg.py
+chmod +x $PREFIX/bin/mud_pg.py
 ```
 
 **الخطوة 6 — إنشاء رابط الاختصار**
 ```bash
-ln -sf $PREFIX/bin/mud_bg.py $PREFIX/bin/bg
+ln -sf $PREFIX/bin/mud_pg.py $PREFIX/bin/pg
 ```
 
 **⚡ أو قم بكل شيء بأمر واحد مجمّع**
 ```bash
-pkg update && pkg upgrade -y && pkg install python tor curl fontconfig rust -y && pip install requests pysocks arabic-reshaper && pip install python-bidi==0.4.2 && curl -L "https://fonts.gstatic.com/s/notonaskharabic/v33/RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwvc-VaA.ttf" -o ~/.termux/font.ttf && termux-reload-settings && curl -o $PREFIX/bin/mud_bg.py https://raw.githubusercontent.com/mmuhacker/mud-bg/main/mud_bg.py && chmod +x $PREFIX/bin/mud_bg.py && ln -sf $PREFIX/bin/mud_bg.py $PREFIX/bin/bg && bg
+pkg update && pkg upgrade -y && pkg install python tor curl fontconfig rust -y && pip install requests pysocks arabic-reshaper && pip install python-bidi==0.4.2 && curl -L "https://fonts.gstatic.com/s/notonaskharabic/v33/RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwvc-VaA.ttf" -o ~/.termux/font.ttf && termux-reload-settings && curl -o $PREFIX/bin/mud_pg.py https://raw.githubusercontent.com/mmuhacker/mud-pg/main/mud_pg.py && chmod +x $PREFIX/bin/mud_pg.py && ln -sf $PREFIX/bin/mud_pg.py $PREFIX/bin/pg && pg
 ```
 
 ---
@@ -127,22 +128,22 @@ pip install requests arabic-reshaper python-bidi==0.4.2 --break-system-packages
 
 **الخطوة 3 — تنزيل الأداة**
 ```bash
-sudo curl -o /usr/local/bin/mud_bg.py https://raw.githubusercontent.com/mmuhacker/mud-bg/main/mud_bg.py
+sudo curl -o /usr/local/bin/mud_pg.py https://raw.githubusercontent.com/mmuhacker/mud-pg/main/mud_pg.py
 ```
 
 **الخطوة 4 — إعطاء صلاحية التشغيل**
 ```bash
-sudo chmod +x /usr/local/bin/mud_bg.py
+sudo chmod +x /usr/local/bin/mud_pg.py
 ```
 
 **الخطوة 5 — إنشاء رابط الاختصار**
 ```bash
-sudo ln -sf /usr/local/bin/mud_bg.py /usr/local/bin/bg
+sudo ln -sf /usr/local/bin/mud_pg.py /usr/local/bin/pg
 ```
 
 **⚡ أو قم بكل شيء بأمر واحد مجمّع**
 ```bash
-sudo apt update && sudo apt upgrade -y && pip install requests arabic-reshaper python-bidi==0.4.2 --break-system-packages && sudo curl -o /usr/local/bin/mud_bg.py https://raw.githubusercontent.com/mmuhacker/mud-bg/main/mud_bg.py && sudo chmod +x /usr/local/bin/mud_bg.py && sudo ln -sf /usr/local/bin/mud_bg.py /usr/local/bin/bg && bg
+sudo apt update && sudo apt upgrade -y && pip install requests arabic-reshaper python-bidi==0.4.2 --break-system-packages && sudo curl -o /usr/local/bin/mud_pg.py https://raw.githubusercontent.com/mmuhacker/mud-pg/main/mud_pg.py && sudo chmod +x /usr/local/bin/mud_pg.py && sudo ln -sf /usr/local/bin/mud_pg.py /usr/local/bin/pg && pg
 ```
 
 ---
@@ -154,13 +155,13 @@ sudo apt update && sudo apt upgrade -y && pip install requests arabic-reshaper p
 </div>
 
 ```bash
-bg
+pg
 ```
 
 **أو بالأمر الكامل**
 
 ```bash
-mud_bg.py
+mud_pg.py
 ```
 
 ---
@@ -170,12 +171,23 @@ mud_bg.py
 ## 📖 طريقة الاستخدام
 
 
+1. اختر نوع التوليد:
+
 | الوضع | الوصف |
 |-------|-------|
-| `1` مسح كل الخدمات | فحص 15 خدمة شائعة دفعة واحدة |
-| `2` منفذ محدد | فحص منفذ واحد بتفاصيل أكثر |
+| `1` كلمة مرور | تحكم كامل بالطول والمعايير 🔑 |
+| `2` عبارة مرور | passphrase سهلة التذكر 📝 |
+| `3` مجموعة | عدة كلمات دفعة واحدة مع حفظ خياري 📦 |
 
 </div>
+
+2. في وضع كلمة المرور تختار:
+   - الطول (الافتراضي 16)
+   - أحرف كبيرة A-Z
+   - أحرف صغيرة a-z
+   - أرقام 0-9
+   - رموز خاصة
+
 ---
 
 <div align="center" id="مثال">
@@ -185,15 +197,16 @@ mud_bg.py
 </div>
 
 اختيارك: 1
-أدخل الهدف: 192.168.1.1
+الطول: 16
 
-  المنفذ  الخدمة        المعلومات
-  ─────────────────────────────────
-  [✓]  22      SSH           SSH-2.0-OpenSSH_8.9p1
-  [✓]  80      HTTP          HTTP/1.1 200 OK | Server: Apache/2.4.54
-  [✓]  3306    MySQL         5.7.39-MySQL Community Server
+  X7#mK9qL@nR2wP5v   [قوية جداً ✓]
+  الطول: 16 حرف
 
-  [✓] الخدمات المكتشفة (3)
+اختيارك: 2
+عدد الكلمات: 4
+
+  rapid-forge-nexus-ghost-3847   [قوية]
+  الطول: 29 حرف
 
 
 ---
@@ -222,8 +235,8 @@ mud_bg.py
 
 </div>
 
-هذه الأداة مخصصة **لأغراض تعليمية واختبار الأنظمة التي تملك صلاحية اختبارها فقط**.
-استخدامها على أنظمة بدون إذن يُعدّ مخالفاً للقانون.
+هذه الأداة مخصصة **لأغراض تعليمية فقط**.
+لا تستخدمها لأغراض غير مشروعة.
 
 ---
 
