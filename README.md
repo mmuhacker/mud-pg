@@ -200,7 +200,8 @@ mud_pg.py
 
 الطول: 16
 
-  X7#mK9qL@nR2wP5v   [قوية جداً ✓]
+  X7#mK9qL@nR2wP5v   
+  [قوية جداً ✓]
   
   الطول: 16 حرف
 
@@ -208,7 +209,8 @@ mud_pg.py
 
 عدد الكلمات: 4
 
-  rapid-forge-nexus-ghost-3847   [قوية]
+  rapid-forge-nexus-ghost-3847   
+  [قوية]
   
   الطول: 29 حرف
 
