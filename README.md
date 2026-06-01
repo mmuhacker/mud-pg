@@ -1,6 +1,7 @@
 <div align="center">
 
-# 🔐 Password Generator — أداة توليد كلمات المرور
+# 🔐 Password Generator
+# أداة توليد كلمات المرور
 
 **تعمل على نظام Kali Linux و تطبيق Termux**
 
